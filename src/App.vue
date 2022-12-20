@@ -1,27 +1,32 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+	<main class="modo-escuro">
+		<AppNav />
+		<Teams />
+	</main>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
+import AppNav from './components/AppNav.vue';
+import Teams from './components/Teams.vue';
 
 export default defineComponent({
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+	name: 'App',
+	components: {
+		AppNav,
+		Teams
+	}
 });
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+main {
+	-bg-primario: #fff;
+	--texto-primario: #000;
+}
+
+main.modo-escuro {
+	--bg-primario: #2b2d42;
+	--texto-primario: #ddd;
 }
 </style>
