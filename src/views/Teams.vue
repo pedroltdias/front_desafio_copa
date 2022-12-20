@@ -1,18 +1,15 @@
 <template>
-	<main>
-		<AppNav />
-		<router-view></router-view>
-	</main>
+	<Teams />
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import AppNav from './components/AppNav.vue';
+import Teams from '../components/Teams.vue';
 
 export default defineComponent({
 	name: 'App',
 	components: {
-		AppNav
+		Teams
 	}
 });
 </script>
