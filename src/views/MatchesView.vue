@@ -3,7 +3,7 @@
 
 		<div class="is-flex is-justify-content-space-between is-align-items-center">
 			<h2 class="is-size-2">Partidas</h2>
-			<button class="button">Sortear Partida</button>
+			<button class="button">Sortear</button>
 		</div>
 		<MatchesComp />
 	</div>
