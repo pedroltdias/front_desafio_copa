@@ -22,22 +22,22 @@
 			<button class="modal-close is-large" @click="toggleModal" aria-label="close"></button>
 		</div>
 		<!-- Até aqui -->
-		<TeamBox />
-		<TeamBox />
-		<TeamBox />
+		<TeamBoxComp />
+		<TeamBoxComp />
+		<TeamBoxComp />
 	</div>
 </template>
 
 <script lang="ts">
 
 import { defineComponent } from 'vue';
-import TeamBox from './TeamBox.vue';
+import TeamBoxComp from './TeamBoxComp.vue';
 // import AppModal from './AppModal.vue';
 
 export default defineComponent({
-	name: "MeusTimes",
+	name: "TeamsComp",
 	components: {
-		TeamBox,
+		TeamBoxComp,
 		// AppModal
 	},
 	data() {

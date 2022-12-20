@@ -1,15 +1,15 @@
 <template>
-	<Teams />
+	<TeamsComp />
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import Teams from '../components/Teams.vue';
+import TeamsComp from '../components/TeamsComp.vue';
 
 export default defineComponent({
 	name: 'TeamsView',
 	components: {
-		Teams
+		TeamsComp
 	}
 });
 </script>

@@ -12,7 +12,7 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-	name: "AppModal",
+	name: "ModalComp",
 	data() {
 		return {
 			isModalOpen: false

@@ -1,18 +1,18 @@
 <template>
 	<main>
-		<AppNav />
+		<NavComp />
 		<router-view></router-view>
 	</main>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import AppNav from './components/AppNav.vue';
+import NavComp from './components/NavComp.vue';
 
 export default defineComponent({
 	name: 'App',
 	components: {
-		AppNav
+		NavComp
 	}
 });
 </script>
