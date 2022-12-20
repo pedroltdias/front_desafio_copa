@@ -15,15 +15,15 @@
 
 		<div class="navbar-menu">
 			<div class="navbar-start">
-				<a class="navbar-item">
+				<router-link to="/" class="navbar-item">
 					Partidas
-				</a>
-				<a class="navbar-item">
+				</router-link>
+				<router-link to="/teams" class="navbar-item">
 					Times
-				</a>
-				<a class="navbar-item">
+				</router-link>
+				<router-link to="/players" class="navbar-item">
 					Jogadores
-				</a>
+				</router-link>
 			</div>
 
 			<div class="navbar-end">
