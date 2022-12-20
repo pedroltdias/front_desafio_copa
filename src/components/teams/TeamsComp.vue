@@ -25,6 +25,9 @@
 		<TeamBoxComp />
 		<TeamBoxComp />
 		<TeamBoxComp />
+		<TeamBoxComp />
+		<TeamBoxComp />
+		<TeamBoxComp />
 	</div>
 </template>
 

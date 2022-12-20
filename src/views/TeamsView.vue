@@ -4,7 +4,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import TeamsComp from '../components/TeamsComp.vue';
+import TeamsComp from '@/components/teams/TeamsComp.vue';
 
 export default defineComponent({
 	name: 'TeamsView',
