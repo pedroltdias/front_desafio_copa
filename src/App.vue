@@ -18,6 +18,9 @@ export default defineComponent({
 </script>
 
 <style>
+html{
+	background-color: #15151E;
+}
 main {
 	background-color: #15151E;
 }
