@@ -18,45 +18,37 @@
 								placeholder="Nome do time..." />
 						</div>
 					</div>
-					<button class="button" type="submit">Salvar</button>
+					<button class="button" type="submit" @click="saveNewTeam">Salvar</button>
 				</form>
 			</div>
 			<button class="modal-close is-large" @click="toggleModal" aria-label="close"></button>
 		</div>
-
-		<div class="team-list">
-			<TeamBoxComp />
-		</div>
-
 	</div>
 </template>
 
 <script lang="ts">
 
 import { defineComponent } from 'vue';
-import TeamBoxComp from './TeamBoxComp.vue';
-import ITeam from '@/interfaces/ITeam'
 
 export default defineComponent({
 	name: "TeamsComp",
-	emits: ['modalWasClicked', 'savingTeam'],
+	emits: ['whenSavingTime'],
 	data() {
 		return {
 			showModal: false,
-			name: '',
-			teams: [] as ITeam[]
+			name: ''
 		}
-	},
-	components: {
-		TeamBoxComp,
 	},
 	methods: {
 		toggleModal() {
 			this.showModal = !this.showModal
-			this.$emit('modalWasClicked')
 		},
-		getAllTeams(){
-			const teams = 
+		saveNewTeam() {
+			this.$emit('whenSavingTime', {
+				name: this.name
+			})
+			this.toggleModal()
+			this.name = ""
 		}
 	},
 })
