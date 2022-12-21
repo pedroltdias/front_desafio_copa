@@ -8,8 +8,8 @@
 					</figure>
 				</div>
 				<div class="media-content">
-					<p class="title is-4">Nome Jogador</p>
-					<p class="subtitle is-6">Posição / Idade / Clube</p>
+					<p class="title is-4">{{ player.name}}</p>
+					<p class="subtitle is-6">{{`${player.position}, ${player.age} anos, ${player.team_name}`}}</p>
 				</div>
 			</div>
 		</div>
@@ -17,10 +17,17 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import IPlayer from '@/interfaces/IPlayer';
+import { defineComponent, PropType } from 'vue';
 
 export default defineComponent({
-	name: "PlayersCardComp"
+	name: "PlayersCardComp",
+	props: {
+		player: {
+			type: Object as PropType<IPlayer>,
+			required: true
+		}
+	}
 })
 
 </script>

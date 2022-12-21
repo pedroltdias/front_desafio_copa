@@ -1,21 +1,31 @@
 <template>
 	<div class="container">
-		<div class="is-flex is-justify-content-space-between is-align-items-center">
-			<h2 class="is-size-2">Jogadores</h2>
-			<button class="button">Adicionar</button>
-		</div>
+		<PlayersComp @when-saving-player="savePlayer" />
+		<PlayersCardComp v-for="(player, index) in players" :key="index" :player="player"/>
 	</div>
-	<PlayersComp/>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 import PlayersComp from '@/components/players/PlayersComp.vue';
+import IPlayer from '@/interfaces/IPlayer';
+import PlayersCardComp from '@/components/players/PlayersCardComp.vue';
 
 export default defineComponent({
 	name: "PlayersView",
 	components: {
-		PlayersComp
+    PlayersComp,
+    PlayersCardComp
+},
+	data() {
+		return {
+			players: [] as IPlayer[]
+		}
+	},
+	methods: {
+		savePlayer(player: IPlayer) {
+			this.players.push(player)
+		}
 	}
 })
 

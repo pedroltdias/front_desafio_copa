@@ -3,5 +3,5 @@ export default interface IPlayer {
     name: String;
     position: String;
     age: Number;
-    team_id: Number;
+    team_name: String;
 }
