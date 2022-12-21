@@ -1,8 +1,11 @@
 <template>
-	<nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+	<nav class="navbar" role="navigation" aria-label="main navigation">
 		<div class="navbar-brand">
-			<a class="navbar-item" href="https://bulma.io">
-				<img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+			<a class="navbar-item" href="/">
+				<div class="is-flex is-size-1 has-text-weight-bold">
+					<h1>MEU</h1>
+					<h1 class="time">TIME</h1>
+				</div>
 			</a>
 
 			<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
@@ -47,3 +50,16 @@ export default defineComponent({
 
 
 </script>
+
+<style>
+.navbar{
+	background-color: #121219;
+}
+.navbar-item{
+	color: #fff;
+}
+.time{
+	color: #f5760f;
+}
+
+</style>

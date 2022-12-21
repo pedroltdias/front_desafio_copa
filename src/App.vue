@@ -18,5 +18,22 @@ export default defineComponent({
 </script>
 
 <style>
+main {
+	background-color: #15151E;
+}
 
+h2 {
+	color: #fff;
+}
+
+.box{
+	background-color: #2B2F40;
+	color: #fff;
+}
+
+.button{
+	background-color: #f5760f;
+	border-color: #f5760f;
+	color: #fff
+}
 </style>

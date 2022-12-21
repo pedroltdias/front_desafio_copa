@@ -24,3 +24,15 @@ export default defineComponent({
 })
 
 </script>
+
+<style>
+.card{
+	background-color: #2B2F40;
+}
+.title{
+	color: #fff;
+}
+.subtitle{
+	color: #fff;
+}
+</style>
