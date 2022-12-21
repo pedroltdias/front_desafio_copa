@@ -1,7 +1,7 @@
 <template>
 	<div class="container">
-		<MatchesComp @when-drew-teams="saveMatch"/>
-		<MatchesBoxComp v-for="(match, index) in matches" :key="index" :match="match"/>
+		<MatchesComp @when-drew-teams="saveMatch" />
+		<MatchesBoxComp v-for="(match, index) in matches" :key="index" :match="match" />
 	</div>
 </template>
 
@@ -10,14 +10,15 @@ import { defineComponent } from 'vue';
 import MatchesComp from '@/components/matches/MatchesComp.vue';
 import IMatches from '@/interfaces/IMatches';
 import MatchesBoxComp from '@/components/matches/MatchesBoxComp.vue';
+import http from '@/http';
 
 
 export default defineComponent({
 	name: "MatchesView",
 	components: {
-    MatchesComp,
-    MatchesBoxComp
-},
+		MatchesComp,
+		MatchesBoxComp
+	},
 	data() {
 		return {
 			matches: [] as IMatches[]
@@ -26,7 +27,19 @@ export default defineComponent({
 	methods: {
 		saveMatch(match: IMatches) {
 			this.matches.push(match)
-		}
+		},
+		async getAllMatches() {
+			try {
+				const res = await http.get("/matches")
+				console.log(res.data)
+				this.matches = res.data
+			} catch (error) {
+				console.error()
+			}
+		},
+	},
+	created() {
+		this.getAllMatches()
 	}
 })
 

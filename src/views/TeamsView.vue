@@ -26,8 +26,7 @@ export default defineComponent({
 	},
 	methods: {
 		saveTeam(team: ITeam) {
-			this.createTeam(team)
-			// this.teams.push(team)
+			this.teams.push(team)
 		},
 		async getAllTeams() {
 			try {
@@ -38,13 +37,6 @@ export default defineComponent({
 				console.error()
 			}
 		},
-		async createTeam(team: ITeam){
-			try {
-				await http.post('/teams/', team)
-			} catch (error) {
-				console.log(error)
-			}
-		}
 	},
 	created () {
 		this.getAllTeams()

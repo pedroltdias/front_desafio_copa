@@ -10,6 +10,7 @@ import { defineComponent } from 'vue';
 import PlayersComp from '@/components/players/PlayersComp.vue';
 import IPlayer from '@/interfaces/IPlayer';
 import PlayersCardComp from '@/components/players/PlayersCardComp.vue';
+import http from '@/http';
 
 export default defineComponent({
 	name: "PlayersView",
@@ -25,7 +26,19 @@ export default defineComponent({
 	methods: {
 		savePlayer(player: IPlayer) {
 			this.players.push(player)
-		}
+		},
+		async getAllPlayers() {
+			try {
+				const res = await http.get("/players")
+				console.log(res.data)
+				this.players = res.data
+			} catch (error) {
+				console.error()
+			}
+		},
+	},
+	created (){
+		this.getAllPlayers()
 	}
 })
 

@@ -9,7 +9,7 @@
 		<div class="modal" :class="{ 'is-active': showModal }">
 			<div class="modal-background"></div>
 			<div class="modal-content">
-				<form @submit.prevent class="box">
+				<form @submit.prevent="createTeam" class="box">
 					<h3 class="is-size-3">Adicionar Novo Time</h3>
 					<div class="field">
 						<label for="teamName" class="label label-text">Nome do Time</label>
@@ -18,7 +18,7 @@
 								placeholder="Nome do time..." />
 						</div>
 					</div>
-					<button class="button" type="submit" @click="saveNewTeam">Salvar</button>
+					<button class="button" type="submit">Salvar</button>
 				</form>
 			</div>
 			<button class="modal-close is-large" @click="toggleModal" aria-label="close"></button>
@@ -52,6 +52,19 @@ export default defineComponent({
 			})
 			this.toggleModal()
 		},
+		async createTeam() {
+			console.log('oi1')
+			try {
+				console.log('oi2')
+				console.log(this.team)
+				await http.post('/teams/', this.team)
+			} catch (error) {
+				console.log('oi3')
+
+				console.log(error)
+			}
+			this.toggleModal()
+		}
 	},
 })
 
