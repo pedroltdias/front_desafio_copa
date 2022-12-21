@@ -1,22 +1,32 @@
 <template>
 	<div class="container">
-
-		<div class="is-flex is-justify-content-space-between is-align-items-center">
-			<h2 class="is-size-2">Partidas</h2>
-			<button class="button">Sortear</button>
-		</div>
-		<MatchesComp />
+		<MatchesComp @when-drew-teams="saveMatch"/>
+		<MatchesBoxComp v-for="(match, index) in matches" :key="index" :match="match"/>
 	</div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 import MatchesComp from '@/components/matches/MatchesComp.vue';
+import IMatches from '@/interfaces/IMatches';
+import MatchesBoxComp from '@/components/matches/MatchesBoxComp.vue';
+
 
 export default defineComponent({
 	name: "MatchesView",
 	components: {
-		MatchesComp
+    MatchesComp,
+    MatchesBoxComp
+},
+	data() {
+		return {
+			matches: [] as IMatches[]
+		}
+	},
+	methods: {
+		saveMatch(match: IMatches) {
+			this.matches.push(match)
+		}
 	}
 })
 
