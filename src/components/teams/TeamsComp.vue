@@ -14,7 +14,7 @@
 					<div class="field">
 						<label for="teamName" class="label label-text">Nome do Time</label>
 						<div class="control">
-							<input id="teamName" v-model="name" type="text" class="input"
+							<input id="teamName" v-model="team.name" type="text" class="input"
 								placeholder="Nome do time..." />
 						</div>
 					</div>
@@ -28,6 +28,7 @@
 
 <script lang="ts">
 
+import http from '@/http';
 import { defineComponent } from 'vue';
 
 export default defineComponent({
@@ -36,7 +37,9 @@ export default defineComponent({
 	data() {
 		return {
 			showModal: false,
-			name: ''
+			team: {
+				name: ''
+			}
 		}
 	},
 	methods: {
@@ -45,11 +48,10 @@ export default defineComponent({
 		},
 		saveNewTeam() {
 			this.$emit('whenSavingTime', {
-				name: this.name
+				team: this.team
 			})
 			this.toggleModal()
-			this.name = ""
-		}
+		},
 	},
 })
 

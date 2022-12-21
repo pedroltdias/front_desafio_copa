@@ -1,5 +1,6 @@
 <template>
 	<div class="container">
+		<!-- <TeamsComp /> -->
 		<TeamsComp @when-saving-time="saveTeam" />
 		<TeamBoxComp v-for="(team, index) in teams" :key="index" :team="team" />
 	</div>
@@ -10,6 +11,7 @@ import { defineComponent } from 'vue';
 import TeamsComp from '@/components/teams/TeamsComp.vue';
 import TeamBoxComp from '@/components/teams/TeamBoxComp.vue';
 import ITeam from '@/interfaces/ITeam';
+import http from '@/http'
 
 export default defineComponent({
 	name: 'TeamsView',
@@ -24,8 +26,28 @@ export default defineComponent({
 	},
 	methods: {
 		saveTeam(team: ITeam) {
-			this.teams.push(team)
+			this.createTeam(team)
+			// this.teams.push(team)
+		},
+		async getAllTeams() {
+			try {
+				const res = await http.get("/teams")
+				console.log(res.data)
+				this.teams = res.data
+			} catch (error) {
+				console.error()
+			}
+		},
+		async createTeam(team: ITeam){
+			try {
+				await http.post('/teams/', team)
+			} catch (error) {
+				console.log(error)
+			}
 		}
+	},
+	created () {
+		this.getAllTeams()
 	}
 });
 </script>
