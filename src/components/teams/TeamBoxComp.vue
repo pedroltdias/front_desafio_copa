@@ -1,7 +1,7 @@
 <template>
-	<section class="box is-flex">
-		<img class="image is-rounded is-align-items-center is-32x32" src="../../assets/logo.png" alt="Bandeira do Time">
-		<h3>Nome do Time</h3>
+	<section class="box is-flex is-align-items-center">
+		<img class="image is-rounded is-32x32 mr-2" src="../../assets/logo.png" alt="Bandeira do Time">
+		<h3>{{ teamName }}</h3>
 	</section>
 </template>
 
@@ -9,7 +9,13 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-	name: "TeamBoxComp"
+	name: "TeamBoxComp",
+	props: {
+		teamName: {
+			type: String,
+			default: "Nome do Time"
+		}
+	}
 })
 
 </script>
