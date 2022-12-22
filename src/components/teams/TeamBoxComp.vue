@@ -19,10 +19,10 @@ export default defineComponent({
 		}
 	},
 	methods: {
-		getFlag() {
-			const teamName = this.team.name;
-			// const flagUrl = findFlagUrlByCountryName 
-		}
+		// getFlag() {
+		// 	const teamName = this.team.name;
+		// 	// const flagUrl = findFlagUrlByCountryName 
+		// }
 	}
 })
 

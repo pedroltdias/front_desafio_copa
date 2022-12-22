@@ -1,6 +1,6 @@
 <template>
 	<div class="container">
-		<MatchesComp @when-drew-teams="saveMatch" />
+		<MatchesComp />
 		<MatchesBoxComp v-for="(match, index) in matches" :key="index" :match="match" />
 	</div>
 </template>
@@ -25,9 +25,6 @@ export default defineComponent({
 		}
 	},
 	methods: {
-		saveMatch(match: IMatches) {
-			this.matches.push(match)
-		},
 		async getAllMatches() {
 			try {
 				const res = await http.get("/matches")
