@@ -3,16 +3,16 @@
 		<div class="is-flex is-justify-content-center is-align-items-center">
 			<h2 class="is-size-3">{{`${match.date} - ${match.stadium}`}}</h2>
 		</div>
-		<div class="is-flex is-justify-content-space-between">
+		<div class="is-flex is-justify-content-space-between has-text-centered">
 			<div class="is-flex is-align-items-center">
-				<img class="image is-rounded is-align-items-center is-32x32 mr-2" src="../../assets/logo.png"
+				<img class="image is-rounded is-align-items-center is-32x32 mr-4" src="../../assets/placeholder.png"
 					alt="Bandeira do Time">
-				<h3>{{ homeTeam.name }}</h3>
+				<h3 class="is-size-5">{{ homeTeam.name }}</h3>
 			</div>
-			<img class="image is-rounded is-align-items-center is-32x32" src="../../assets/logo.png" alt="Bandeira do Time">
+			<h3 class="is-size-3 is-centered">X</h3>
 			<div class="is-flex is-align-items-center">
-				<h3>{{ awayTeam.name }}</h3>
-				<img class="image is-rounded is-align-items-center is-32x32 ml-2" src="../../assets/logo.png"
+				<h3 class="is-size-5">{{ awayTeam.name }}</h3>
+				<img class="image is-rounded is-align-items-center is-32x32 ml-4" src="../../assets/placeholder.png"
 					alt="Bandeira do Time">
 			</div>
 		</div>
