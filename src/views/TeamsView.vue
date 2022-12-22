@@ -1,7 +1,6 @@
 <template>
 	<div class="container">
-		<!-- <TeamsComp /> -->
-		<TeamsComp @when-saving-time="saveTeam" />
+		<TeamsComp />
 		<TeamBoxComp v-for="(team, index) in teams" :key="index" :team="team" />
 	</div>
 </template>
@@ -25,9 +24,6 @@ export default defineComponent({
 		}
 	},
 	methods: {
-		saveTeam(team: ITeam) {
-			this.teams.push(team)
-		},
 		async getAllTeams() {
 			try {
 				const res = await http.get("/teams")
@@ -38,7 +34,7 @@ export default defineComponent({
 			}
 		},
 	},
-	created () {
+	created() {
 		this.getAllTeams()
 	}
 });
